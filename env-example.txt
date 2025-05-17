@@ -1,0 +1,19 @@
+# Environment variables example file
+# Copy this file to .env and fill in your values
+
+# Database connection string
+DATABASE_URL="postgresql://user:password@localhost:5432/casino-royal?schema=public"
+
+# NextAuth configuration
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="http://localhost:3000"
+
+# API URL for development
+NEXT_PUBLIC_API_URL="http://localhost:3000/api"
+
+# Game service configuration
+NEXT_PUBLIC_GAME_SERVER_URL="http://localhost:3001"
+
+# Payment gateway configuration
+PAYMENT_GATEWAY_API_KEY="your-payment-gateway-api-key"
+PAYMENT_GATEWAY_API_SECRET="your-payment-gateway-api-secret"

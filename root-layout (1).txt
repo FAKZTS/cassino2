@@ -1,0 +1,33 @@
+// src/app/layout.tsx
+
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Header } from '@/components/layout/Header';
+import { AuthProvider } from '@/lib/auth/AuthProvider';
+import { Toaster } from '@/components/common/Toaster';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Casino Royal - A melhor plataforma de jogos online',
+  description: 'Jogue os melhores jogos de cassino online com bônus exclusivos e pagamentos rápidos. Slots, Tigrinho, Crash e muito mais!',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="pt-BR">
+      <body className={`${inter.className} bg-gray-900 text-white`}>
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+          <Toaster />
+        </AuthProvider>
+      </body>
+    </html>
+  );
+}
